@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // Keeps build info specific to the app
+    "target": "ES2020", // Targets modern JavaScript (can be adjusted based on your needs)
+    "useDefineForClassFields": true, // Ensures class fields use the defined semantics
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Includes necessary libraries for both modern JS and DOM
+    "module": "ESNext", // Use ES module system
+    "skipLibCheck": true, // Skip type checking for declaration files to speed up compilation
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Ensures compatibility with bundlers like Vite
+    "allowImportingTsExtensions": true, // Allows importing TypeScript files with `.ts` extensions
+    "isolatedModules": true, // Ensures files are transpiled in isolation, which is important for bundlers
+    "moduleDetection": "force", // Forces module detection for all files
+    "noEmit": true, // Prevents the generation of output files (since Vite handles the bundling)
+    "jsx": "react-jsx", // Uses the new JSX Transform (introduced with React 17)
+
+    /* Linting */
+    "strict": true, // Enables all strict type-checking options for better safety
+    "noUnusedLocals": true, // Ensures no unused local variables
+    "noUnusedParameters": true, // Ensures no unused function parameters
+    "noFallthroughCasesInSwitch": true, // Prevents fallthrough between case statements in switch
+    "noUncheckedSideEffectImports": true // Ensures imported modules do not have unchecked side effects
+  },
+  "include": [
+    "src" // Includes the source directory to be type-checked
+  ],
+  "exclude": [
+    "node_modules" // Exclude the node_modules directory to avoid unnecessary type checking
+  ]
+}

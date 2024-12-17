@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo", // Keeps the build info in a specific location for incremental builds
+    "target": "ES2022", // Target modern JS features (you can adjust if you need to support older browsers)
+    "lib": ["ES2023"], // Use the latest standard library
+    "module": "ESNext", // Supports ES module system
+    "skipLibCheck": true, // Skip type checking of declaration files (speeds up compilation)
+    
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Resolves modules in a way that works well with bundlers like Vite
+    "allowImportingTsExtensions": true, // Allows importing TypeScript files with `.ts` extensions
+    "isolatedModules": true, // Ensures each file can be safely transpiled in isolation (important for bundlers)
+    "moduleDetection": "force", // Forces module detection for all files, even for non-JS/TS files (good for consistency)
+    "noEmit": true, // No JavaScript output will be generated (since we're using Vite for bundling)
+
+    /* Linting */
+    "strict": true, // Enables all strict type-checking options
+    "noUnusedLocals": true, // Prevents unused variables from being present in the code
+    "noUnusedParameters": true, // Prevents unused parameters in functions
+    "noFallthroughCasesInSwitch": true, // Prevents fallthrough between cases in switch statements
+    "noUncheckedSideEffectImports": true, // Ensures that imported modules do not have side effects unless explicitly declared
+
+    /* Other useful settings */
+    "esModuleInterop": true, // Ensures compatibility with CommonJS modules
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "strictNullChecks": true, // Ensures strict null checks for better type safety
+    "skipDefaultLibCheck": true // Skips default library checking to speed up the build
+  },
+  "include": [
+    "vite.config.ts", // Include your Vite config in TypeScript files
+    "src/**/*" // Make sure to include the source code directory to allow for better autocompletion and linting
+  ],
+  "exclude": [
+    "node_modules" // Exclude unnecessary directories (e.g., node_modules) from being compiled
+  ]
+}
